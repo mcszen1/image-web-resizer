@@ -19,7 +19,7 @@ def format_file_size(size_in_bytes):
 
 def resize_image(image, target_size=TARGET_SIZE, max_filesize=MAX_IMAGE_SIZE):
     # Redimensionar a imagem mantendo sua proporção
-    image.thumbnail(target_size, Image.ANTIALIAS)
+    image.thumbnail(target_size, Image.LANCZOS)
 
     # Salvar a imagem com alta qualidade e verificar o tamanho do arquivo
     img_byte_arr = io.BytesIO()

@@ -35,6 +35,14 @@ def resize_image(image, target_size=TARGET_SIZE, max_filesize=MAX_IMAGE_SIZE):
     return img_byte_arr
 
 
+def create_download_button(i, img_byte_arr):
+    st.download_button(
+        label="Download Imagem Redimensionada",
+        data=img_byte_arr.getvalue(),
+        file_name=f"image_{i}.jpg",
+        key=f"download_button_{i}"
+    )
+
 def main():
     st.title('Redimensionador de Imagens')
 
@@ -62,8 +70,7 @@ def main():
                 st.write(f"Tamanho do arquivo: {format_file_size(len(img_byte_arr.getvalue()))}")
 
                 # Fornecer link de download para a imagem redimensionada
-                st.download_button("Download Imagem Redimensionada", img_byte_arr.getvalue(), f'image_{i}.jpg', key=f'download_button_{i}')
+                create_download_button(i, img_byte_arr)
 
 if __name__ == "__main__":
     main()
-

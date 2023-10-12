@@ -41,7 +41,7 @@ def main():
     uploaded_files = st.file_uploader("Selecione as imagens", type=['jpg', 'jpeg', 'png'], accept_multiple_files=True)
 
     if uploaded_files:
-        for uploaded_file in uploaded_files:
+        for i, uploaded_file in enumerate(uploaded_files):
             img = Image.open(uploaded_file)
 
             # Mostrar imagem original
@@ -62,8 +62,8 @@ def main():
                 st.write(f"Tamanho do arquivo: {format_file_size(len(img_byte_arr.getvalue()))}")
 
                 # Fornecer link de download para a imagem redimensionada
-                st.download_button("Download Imagem Redimensionada", img_byte_arr.getvalue(), 'image.jpg')
-
+                st.download_button("Download Imagem Redimensionada", img_byte_arr.getvalue(), f'image_{i}.jpg', key=f'download_button_{i}')
 
 if __name__ == "__main__":
     main()
+

@@ -45,9 +45,10 @@ def create_download_button(i, img_byte_arr):
 
 def main():
     st.image('labcom_logo_preto.jpg')
-    st.title("LABCOM DOWNSCALER")
+    st.title("DOWNSCALER")
     st.write('REDUTOR DE IMAGENS')
-    st.write('Use uma imagem de arquivo ou tire uma foto com sua câmera')
+    st.write('Usar imagens mais leves no seu site facilita o carregamento e a experiência do usuário na sua página. Assim, se você tem imagens de tamanho maior que não precisam ser tão pesadas, basta usar o image-web-resizer para converter várias delas ao mesmo tempo ( redução em lote ) e depois apenas fazer o download das imagens . 
+    Você faz o upload das imagens que quiser (limitadas a 200 mega no total). Formatos aceitos: jpg, jpeg, png.')
 
     uploaded_files = st.file_uploader("Selecione as imagens", type=['jpg', 'jpeg', 'png'], accept_multiple_files=True)
 

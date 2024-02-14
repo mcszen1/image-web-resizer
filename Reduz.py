@@ -44,7 +44,10 @@ def create_download_button(i, img_byte_arr):
     )
 
 def main():
-    st.title('Redimensionador de Imagens')
+    st.image('labcom_logo_preto.jpg')
+    st.title("LABCOM DOWNSCALER")
+    st.write('REDUTOR DE IMAGENS')
+    st.write('Use uma imagem de arquivo ou tire uma foto com sua câmera')
 
     uploaded_files = st.file_uploader("Selecione as imagens", type=['jpg', 'jpeg', 'png'], accept_multiple_files=True)
 
